@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body
+    class="font-Rubik bg-veryDarkBlue text-white min-h-[100vh] lg:flex lg:flex-col lg:justify-center"
+  >
+    <div
+      class="px-5 lg:px-12 py-16 grid gap-y-7 max-w-[500px] mx-auto lg:grid-cols-[.22fr_.78fr] lg:gap-x-6 lg:max-w-[1200px] lg:w-full lg:py-0"
+    >
+      <div class="bg-darkBlue rounded-xl flex flex-col">
+        <div
+          class="flex items-center bg-Blue justify-center rounded-xl py-7 lg:flex-col lg:items-start lg:px-6 lg:gap-y-8"
+        >
+          <div>
+            <img
+              class="w-[60px] sm:w-[70px] border-2 rounded-full border-white"
+              src="images/image-jeremy.png"
+              alt=""
+            />
+          </div>
+          <div class="ml-3 lg:ml-0 lg:pb-10">
+            <p class="font-[300] text-paleBlue text-[15px]">Report for</p>
+            <h1
+              class="font-[300] text-[1.3rem] sm:text-3xl lg:text-4xl lg:max-w-[250px] 2xl:text-[2.5rem]"
+            >
+              Jeremy Robson
+            </h1>
+          </div>
+        </div>
+        <div
+          class="text-desaturatedBlue flex justify-between items-center px-6 py-5 lg:flex-col lg:items-start lg:justify-center lg:h-full ftf:px-8 sm:px-10 md:px-14 lg:px-6"
+        >
+          <div
+            class="flex lg:flex-col items-center justify-between lg:items-start lg:gap-y-3 w-full md:text-[17px]"
+          >
+            <button
+              class="hover:text-white transition-all text-white"
+              id="daily"
+            >
+              Daily
+            </button>
+            <button class="hover:text-white transition-all" id="weekly">
+              Weekly
+            </button>
+            <button class="hover:text-white transition-all" id="monthly">
+              Monthly
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="overflow-hidden rounded-xl" id="work" data-card="Work">
+            <div
+              class="bg-lightRedWork rounded-b-2xl lg:rounded-b-full relative"
+            >
+              <div class="h-[35px] lg:h-[40px]">
+                <img
+                  class="absolute w-[70px] right-[1rem] top-[-.5rem] lg:right-[1.2rem] lg:w-[80px]"
+                  src="images/icon-work.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bg-darkBlue px-5 flex flex-col gap-y-1 py-6 rounded-xl relative lg:gap-y-5 hover:bg-[hsl(235_46%_35%)] transition-all"
+              >
+                <div class="flex justify-between items-center">
+                  <p>Work</p>
+                  <div class="flex gap-x-[3px]">
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between lg:flex-col lg:items-start"
+                >
+                  <h1 class="text-3xl lg:text-5xl font-[300]" data-current="">
+                    5hrs
+                  </h1>
+                  <p class="text-[14px] text-paleBlue lg:mt-2" data-previous="">
+                    Last Day - 7hrs
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl" id="Play" data-card="Play">
+            <div
+              class="bg-softBluePlay rounded-b-2xl lg:rounded-b-full relative"
+            >
+              <div class="h-[35px] lg:h-[40px]">
+                <img
+                  class="absolute w-[70px] right-[1rem] top-[-.5rem] lg:right-[1.2rem] lg:w-[80px]"
+                  src="images/icon-play.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bg-darkBlue px-5 flex flex-col gap-y-1 py-6 rounded-xl relative overflow-hidden lg:gap-y-5 hover:bg-[hsl(235_46%_35%)] transition-all"
+              >
+                <div class="flex justify-between items-center">
+                  <p>Play</p>
+                  <div class="flex gap-x-[3px]">
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between lg:flex-col lg:items-start"
+                >
+                  <h1 class="text-3xl font-[300] lg:text-5xl" data-current="">
+                    1hr
+                  </h1>
+                  <p class="text-paleBlue text-[14px] mt-2" data-previous="">
+                    Last Day - 2hrs
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl" data-card="Study">
+            <div
+              class="bg-lightRedStudy rounded-b-2xl lg:rounded-b-full relative"
+            >
+              <div class="h-[35px] lg:h-[40px]">
+                <img
+                  class="absolute w-[70px] right-[1rem] top-[-.5rem] lg:right-[1.2rem] lg:w-[80px]"
+                  src="images/icon-study.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bg-darkBlue px-5 flex flex-col gap-y-1 py-6 rounded-xl relative overflow-hidden lg:gap-y-5 hover:bg-[hsl(235_46%_35%)] transition-all"
+              >
+                <div class="flex justify-between items-center">
+                  <p>Study</p>
+                  <div class="flex gap-x-[3px]">
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between lg:flex-col lg:items-start"
+                >
+                  <h1 class="text-3xl font-[300] lg:text-5xl" data-current="">
+                    0hr
+                  </h1>
+                  <p class="text-paleBlue text-[14px] lg:mt-2" data-previous="">
+                    Last Day - 1hr
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl" data-card="Exercise">
+            <div
+              class="bg-limeGreenExercise rounded-b-2xl lg:rounded-b-full relative"
+            >
+              <div class="h-[35px] lg:h-[40px]">
+                <img
+                  class="absolute w-[70px] right-[1rem] top-[-.5rem] lg:right-[1.2rem] lg:w-[80px]"
+                  src="images/icon-exercise.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bg-darkBlue px-5 flex flex-col gap-y-1 py-6 rounded-xl relative overflow-hidden lg:gap-y-5 hover:bg-[hsl(235_46%_35%)] transition-all"
+              >
+                <div class="flex justify-between items-center">
+                  <p>Exercise</p>
+                  <div class="flex gap-x-[3px]">
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between lg:flex-col lg:items-start"
+                >
+                  <h1 class="text-3xl font-[300] lg:text-5xl" data-current="">
+                    1hr
+                  </h1>
+                  <p class="text-paleBlue text-[14px] lg:mt-2" data-previous="">
+                    Last Day - 1hr
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl" data-card="Social">
+            <div
+              class="bg-violetSocial rounded-b-2xl lg:rounded-b-full relative"
+            >
+              <div class="h-[35px] lg:h-[40px]">
+                <img
+                  class="absolute w-[70px] right-[1rem] top-[-.5rem] lg:right-[1.2rem] lg:w-[80px]"
+                  src="images/icon-social.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bg-darkBlue px-5 flex flex-col gap-y-1 py-6 rounded-xl relative overflow-hidden lg:gap-y-5 hover:bg-[hsl(235_46%_35%)] transition-all"
+              >
+                <div class="flex justify-between items-center">
+                  <p>Social</p>
+                  <div class="flex gap-x-[3px]">
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between lg:flex-col lg:items-start"
+                >
+                  <h1 class="text-3xl lg:text-5xl font-[300]" data-current="">
+                    1hr
+                  </h1>
+                  <p class="text-paleBlue text-[14px] lg:mt-2" data-previous="">
+                    Last Day - 3hrs
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl" data-card="SelfCare">
+            <div
+              class="bg-softOrangeSelfCare rounded-b-2xl lg:rounded-b-full relative"
+            >
+              <div class="h-[35px] lg:h-[40px]">
+                <img
+                  class="absolute w-[70px] right-[1rem] top-[-.5rem] lg:right-[1.2rem] lg:w-[80px]"
+                  src="images/icon-self-care.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="bg-darkBlue px-5 flex flex-col gap-y-1 py-6 rounded-xl relative overflow-hidden lg:gap-y-5 hover:bg-[hsl(235_46%_35%)] transition-all"
+              >
+                <div class="flex justify-between items-center">
+                  <p>Self Care</p>
+                  <div class="flex gap-x-[3px]">
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                    <div class="bg-paleBlue h-[5px] w-[5px] rounded-full"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between lg:flex-col lg:items-start"
+                >
+                  <h1 class="text-3xl font-[300] lg:text-5xl" data-current="">
+                    0hr
+                  </h1>
+                  <p class="text-paleBlue text-[14px] lg:mt-2" data-previous="">
+                    Last Day - 1hr
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
