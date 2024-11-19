@@ -21,77 +21,37 @@ const getData = async (buttonId) => {
   validateAndShowDisplayData(dataJson, buttonId);
 };
 
-//Run validateAndShowDisplayData function with getbuttonId and buttonId
-const validateAndShowDisplayData = (getButtonId, buttonId) => {
-  //Day
-  if (buttonId === "daily") {
-    console.log("Last Day");
-    for (let i = 0; i < getButtonId.length; i++) {
+//change the elements texts using changeTexts function
+function changeTexts(getButtonId, buttonId) {
+  for (let i = 0; i < getButtonId.length; i++) {
+    data_card[i].querySelector(
+      "[data-current]"
+    ).innerText = `${getButtonId[i].timeframes[buttonId].current}hrs`;
+    data_card[i].querySelector(
+      "[data-previous]"
+    ).innerText = `Last Week - ${getButtonId[i].timeframes[buttonId].previous}hrs`;
+    if (getButtonId[i].timeframes[buttonId].current <= 1) {
       data_card[i].querySelector(
         "[data-current]"
-      ).innerText = `${getButtonId[i].timeframes[buttonId].current}hrs`;
-      data_card[i].querySelector(
-        "[data-previous]"
-      ).innerText = `Last Day - ${getButtonId[i].timeframes[buttonId].previous}hrs`;
-      if (
-        getButtonId[i].timeframes[buttonId].current <= 1 &&
-        getButtonId[i].timeframes[buttonId].previous <= 1
-      ) {
-        data_card[i].querySelector(
-          "[data-current]"
-        ).innerText = `${getButtonId[i].timeframes[buttonId].current}hr`;
-        data_card[i].querySelector(
-          "[data-previous]"
-        ).innerText = `Last Day - ${getButtonId[i].timeframes[buttonId].previous}hr`;
-      }
-    }
-  }
-
-  //Week
-  if (buttonId === "weekly") {
-    console.log("Last Week");
-    for (let i = 0; i < getButtonId.length; i++) {
-      data_card[i].querySelector(
-        "[data-current]"
-      ).innerText = `${getButtonId[i].timeframes[buttonId].current}hrs`;
-      data_card[i].querySelector(
-        "[data-previous]"
-      ).innerText = `Last Week - ${getButtonId[i].timeframes[buttonId].previous}hrs`;
-      if (
-        getButtonId[i].timeframes[buttonId].current <= 1 &&
-        getButtonId[i].timeframes[buttonId].previous <= 1
-      ) {
-        data_card[i].querySelector(
-          "[data-current]"
-        ).innerText = `${getButtonId[i].timeframes[buttonId].current}hr`;
+      ).innerText = `${getButtonId[i].timeframes[buttonId].current}hr`;
+      if (getButtonId[i].timeframes[buttonId].previous <= 1) {
         data_card[i].querySelector(
           "[data-previous]"
         ).innerText = `Last Week - ${getButtonId[i].timeframes[buttonId].previous}hr`;
       }
     }
   }
+}
 
-  //Month
+//validate the button clicks
+const validateAndShowDisplayData = (getButtonId, buttonId) => {
+  if (buttonId === "daily") {
+    changeTexts(getButtonId, buttonId);
+  }
+  if (buttonId === "weekly") {
+    changeTexts(getButtonId, buttonId);
+  }
   if (buttonId === "monthly") {
-    console.log("Last Month");
-    for (let i = 0; i < getButtonId.length; i++) {
-      data_card[i].querySelector(
-        "[data-current]"
-      ).innerText = `${getButtonId[i].timeframes[buttonId].current}hrs`;
-      data_card[i].querySelector(
-        "[data-previous]"
-      ).innerText = `Last Month - ${getButtonId[i].timeframes[buttonId].previous}hrs`;
-      if (
-        getButtonId[i].timeframes[buttonId].current <= 1 &&
-        getButtonId[i].timeframes[buttonId].previous <= 1
-      ) {
-        data_card[i].querySelector(
-          "[data-current]"
-        ).innerText = `${getButtonId[i].timeframes[buttonId].current}hr`;
-        data_card[i].querySelector(
-          "[data-previous]"
-        ).innerText = `Last Month - ${getButtonId[i].timeframes[buttonId].previous}hr`;
-      }
-    }
+    changeTexts(getButtonId, buttonId);
   }
 };
