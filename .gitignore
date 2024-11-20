@@ -19,5 +19,4 @@ node_modules
 style-guide.md
 package-lock.json
 package.json
-postcss.config.js
 README-template.md

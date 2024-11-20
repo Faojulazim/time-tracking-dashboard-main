@@ -45,7 +45,7 @@ function changeTexts(getButtonId, buttonId) {
 
 //validate the button clicks
 const validateAndShowDisplayData = (getButtonId, buttonId) => {
-  if (buttonId === "dailynpm") {
+  if (buttonId === "daily") {
     changeTexts(getButtonId, buttonId);
   }
   if (buttonId === "weekly") {
