@@ -55,4 +55,3 @@ const validateAndShowDisplayData = (getButtonId, buttonId) => {
     changeTexts(getButtonId, buttonId);
   }
 };
-dd;
