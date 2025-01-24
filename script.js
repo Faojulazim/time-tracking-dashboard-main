@@ -22,14 +22,14 @@ const getData = async (buttonId) => {
 };
 
 //change the elements texts using changeTexts function
-function changeTexts(getButtonId, buttonId) {
+function changeTexts(getButtonId, buttonId, status) {
   for (let i = 0; i < getButtonId.length; i++) {
     data_card[i].querySelector(
       "[data-current]"
     ).innerText = `${getButtonId[i].timeframes[buttonId].current}hrs`;
     data_card[i].querySelector(
       "[data-previous]"
-    ).innerText = `Last Week - ${getButtonId[i].timeframes[buttonId].previous}hrs`;
+    ).innerText = `${status} - ${getButtonId[i].timeframes[buttonId].previous}hrs`;
     if (getButtonId[i].timeframes[buttonId].current <= 1) {
       data_card[i].querySelector(
         "[data-current]"
@@ -37,7 +37,7 @@ function changeTexts(getButtonId, buttonId) {
       if (getButtonId[i].timeframes[buttonId].previous <= 1) {
         data_card[i].querySelector(
           "[data-previous]"
-        ).innerText = `Last Week - ${getButtonId[i].timeframes[buttonId].previous}hr`;
+        ).innerText = `${status} - ${getButtonId[i].timeframes[buttonId].previous}hr`;
       }
     }
   }
@@ -46,12 +46,12 @@ function changeTexts(getButtonId, buttonId) {
 //validate the button clicks
 const validateAndShowDisplayData = (getButtonId, buttonId) => {
   if (buttonId === "daily") {
-    changeTexts(getButtonId, buttonId);
+    changeTexts(getButtonId, buttonId, "Last Day");
   }
   if (buttonId === "weekly") {
-    changeTexts(getButtonId, buttonId);
+    changeTexts(getButtonId, buttonId, "Last Week");
   }
   if (buttonId === "monthly") {
-    changeTexts(getButtonId, buttonId);
+    changeTexts(getButtonId, buttonId, "Last Month");
   }
 };
